@@ -14,13 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
 from . import  views
 
 urlpatterns = [
     path('product', views.product),
     path('product/2019', views.poroduct2019),
-    # path('product/', views.poroductFour),
+    re_path('^product/(?P<year>[\d]{4})/(?P<month>[0-9]{1,2})/(?P<day>[\d]{1,2})$', views.productFour, name = 'productFour'),
     # path('product/2020/20', views.poroduct2020),
 
 ]

@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'Application1.apps.Application1Config',
-    # 'Application2.apps.Application2Config',
+    'Application2.apps.Application2Config',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
