@@ -21,21 +21,14 @@ def productFourYM(request, year, month):
     return HttpResponse(
         {
             'It’s months basic folder %s' % year,
-            '.%s' % month
+            '%s' % month
         }
 
     )
 
 def productFourYMD(request, year, month ,day):
     return HttpResponse(
-        {
-            '.%s' % month,
-            'It’s days basic folder %s' % year,
-            '.%s' % day,
-
-
-        }
-
+            'It’s days basic folder %s/%s/%s' % (year, month, day)
     )
 
 def productText(request, word):

@@ -14,11 +14,25 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, re_path
+from django.urls import path, re_path, include
 from . import  views
+
+new_patterns = [
+    path('comments', views.comments),
+    re_path('^comments/(?P<number>[\d]+)', views.comments_number, name = 'number')
+]
+
+action_patterns = [
+    re_path('^page-(?P<page>[1-9]|[1-9][0-9]+)/(?P<action>edit|delete|answer)/$', views.reviewAction,
+            name='reviewAction'),
+]
 
 urlpatterns = [
     path('review', views.review),
     re_path('^review/page-(?P<Page>[1-9])$', views.reviewPage, name='reviewPage'),
-    re_path('^review/page-(?P<Page>[1-9][0-9]+)$', views.reviewPage, name = 'reviewPage'),
+    re_path(r'review/(?:page-(?P<Page>[1-9][0-9]+)/)$', views.reviewPage, name = 'reviewPage'),
+    path('new_patterns/', include(new_patterns)),
+    path('product/review/', include(action_patterns))
+
 ]
+
