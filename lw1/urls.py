@@ -21,8 +21,10 @@ urlpatterns = [
     path('Application1/', include('Application1.urls')),
     path('', include('Application1.urls')),
     path('admin/', admin.site.urls),
-    path('Application2/', include('Application2.urls')),
+    path('application2/', include('Application2Lw3.urls')),
     path('Application3/', include('Application3.urls')),
     path('Application4/', include('Application4.urls')),
+    path('applicationmodels/', include('applicationmodels.urls')),
+    path('appdatabase/', include('appdatabase.urls'))
     # path('new_patterns/', include('Application3.urls'))
 ]

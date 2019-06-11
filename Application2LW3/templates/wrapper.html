@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> {% block title %}Title {% endblock %} </title>
+    <style>
+
+        body {
+            font-family: Arial;
+            font-size: 1.2rem;
+        }
+
+        header, footer, section, aside {
+            width: 100%;
+            border-style: solid;
+            border-width: 1px;
+            border-color: black;
+        }
+        footer, header {
+            text-align: center;
+        }
+
+        section {
+            height: 450px;
+
+        }
+
+
+        #content {
+            margin: auto;
+            height: 450px;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        {% block header %}
+        <h1>Header</h1>
+        {% endblock %}
+    </header>
+    <div>
+        <section>
+            <div id="content">
+            {% block content %}
+                Шаблон головної сторінки
+            {% endblock %}
+            </div>
+        </section>
+        <aside>
+            {% include "./menu.html" %}
+        </aside>
+    </div>
+    <footer>
+        {% block footer %}
+        <h1>Footer</h1>
+        {% endblock %}
+    </footer>
+</body>
+</html>

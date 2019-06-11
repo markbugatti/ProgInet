@@ -14,7 +14,6 @@ urlpatterns = [
     path('render-html', views.renderHtml),
     path('render-template', views.htmlFormTemplate),
     path('render-template/form-handler', views.formHandler),
-
 ]
 
 

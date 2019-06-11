@@ -13,7 +13,7 @@ def renderHtml(requdest):
     _html = "<!DOCTYPE html><html><body><h1>My First Heading</h1><p>My first paragraph.</p></body></html>";
     return HttpResponse(_html);
 def htmlFormTemplate(request):
-    return render(request,"form1.html");
+    return render(request, "form1.html");
 
 def formHandler(request):
     if (request.POST):

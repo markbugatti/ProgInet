@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Humans</title>
+    <style>
+        body {
+            font-size: 1.2rem;
+            font-family: Arial;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            border-color: darkslategray;
+            border-width: 1px;
+            border-style: solid;
+            padding: 2px 4px;
+        }
+    </style>
+</head>
+<body>
+    <h3>All humans:</h3>
+    <table>
+        {% for list in human_list %}
+        <tr>
+            <td>
+            {{ list }}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h3>First three from Human list:</h3>
+    <table>
+        {% for list in firstThree_list %}
+        <tr>
+            <td>
+            {{ list }}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h3>After year 2000:</h3>
+    <table>
+        {%for item in after_year_00 %}
+        <tr>
+             <td>
+                 {{ item }}
+             </td>
+        </tr>
+        {% endfor%}
+    </table>
+    <h3>First company members:</h3>
+    <table>
+        {%for item in first_human %}
+        <tr>
+             <td>
+                 {{ item }}
+             </td>
+        </tr>
+        {% endfor%}
+    </table>
+    <h3>Birthday descending:</h3>
+    <table>
+        {%for item in birth_desc %}
+        <tr>
+             <td>
+                 {{ item }}
+             </td>
+        </tr>
+        {% endfor%}
+    </table>
+    <h3>Salary less then 2000:</h3>
+    <table>
+        {%for item in salary_less_2000 %}
+        <tr>
+             <td>
+                 {{ item }}
+             </td>
+        </tr>
+        {% endfor%}
+    </table>
+    <h3>Sort by salary ascending:</h3>
+    <table>
+        {%for item in salary_asc %}
+        <tr>
+             <td>
+                 {{ item }}
+             </td>
+        </tr>
+        {% endfor%}
+    </table>
+    <h3>Human with name 'Alex'</h3>
+    <table>
+        {%for item in name_exact %}
+        <tr>
+             <td>
+                 {{ item }}
+             </td>
+        </tr>
+        {% endfor%}
+    </table>
+</body>
+</html>

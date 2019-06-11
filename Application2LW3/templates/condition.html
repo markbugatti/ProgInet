@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, tr, td {
+            border-width: 1px;
+            border-color: black;
+            border-style: solid;
+        }
+        tr, td, a{
+            font-family: Arial;
+            font-size: 1.2rem;
+        }
+
+        tr, td {
+            padding: 2px;
+        }
+    </style>
+</head>
+<body>
+    <table cellspacing="0">
+        <tr>
+            <td>
+                Користувач
+            </td>
+            <td>
+                {% if current_user == 'admin' %}
+                    Ви зайшли як: {{current_user}}
+                {% endif %}
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Активність
+            </td>
+            <td>
+                {% if days %}
+                    {% for day in days %}
+                        {{day}}
+                    {% endfor %}
+                {% endif %}
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                День тижня
+            </td>
+            <td>
+                {% if day == 1 %}
+                    Понеділок
+                {% elif day == 2 %}
+                    Вівторок
+                {% elif day == 3 %}
+                    Середа
+                {% elif day == 4 %}
+                    Четвер
+                {% elif day == 5 %}
+                    П'ятниця
+                {% elif day == 6 %}
+                    Субота
+                {% else %}
+                    Неділя
+                {% endif %}
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Робочі дні
+            </td>
+            <td>
+                {% if day > 5 %}
+                    Вихідний
+                {% else%}
+                    Робочий
+                {% endif %}
+
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Статус
+            </td>
+            <td>
+                {% if status == 'online' %}
+                    <a style="color: green">Користувач активний</a>
+                {% else%}
+                    <a style="color: darkred"> Офлайн </a>
+                {% endif %}
+
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Додатковоо
+            </td>
+            <td>
+                {% if "gmail.com" in email %}
+                    Сервіси Google
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

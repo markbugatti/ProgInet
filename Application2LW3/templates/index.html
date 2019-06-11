@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<ul>
+    <li>{{ job_year.2 }}</li>
+    <li>{{ name }}</li>
+    <li>{{ lastname }}</li>
+    <li>{{ contact.nickname|capfirst }}</li>
+    <li>Контракт діє до {{job_year.2|add:"5"}}</li>
+    <li>{% now "SHORT_DATE_FORMAT" %}</li>
+    <li>початок роботи - {{ job_year.0 }}</li>
+    <li>Код {{ contact.phone|slice:":4" }} Тел: {{ contact.phone|slice:"4:"}}</li>
+</ul>
+
+</body>
+</html>
